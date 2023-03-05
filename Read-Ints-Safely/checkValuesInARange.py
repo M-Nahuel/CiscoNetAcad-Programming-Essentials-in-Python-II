@@ -1,15 +1,15 @@
 def readint(prompt, min, max):
-    try:
-        while True:
+    while True:
+        try:
             x = int(input(prompt))
-            assert x > min and min < max
+            assert x > min and x < max
             break
-        return x
-    except ValueError:
-        print('Error: invalid input')
-        v = readint(prompt, min, max)
-    except AssertionError:
-        print('Error: the value is out of allowed range')
+        except ValueError:
+            print('Error: invalid input')
+            v = readint(prompt, min, max)
+        except AssertionError:
+            print('Error: the value is out of allowed range')
+    return x
 
 v = readint("Enter a number between -10 a 10: ", -10, 10)
 
