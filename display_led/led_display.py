@@ -12,12 +12,9 @@ ls = [
         ['###','  #','###','###','  #','###','###','  #','###','###']
      ]
 
-for i in range(len(list)):
+for r in range(5):
     e = ' '
-    for row in range(5):
-        for j in range(len(ls[row])):
-            if j == 9:
-                e = '\n'
-            if j == list[i]:
-                print(ls[row][j],i, sep=' ', end=e)
-
+    for i in range(len(list)):
+        if i == len(list)-1:
+            e = '\n'
+        print(ls[r][list[i]], end=e)
