@@ -1,10 +1,10 @@
 def ledDisplay(prompt):
     while True:
         try:
-            num = input(prompt)
+            num = int(input(prompt))
             if num >= 0:
                 list = []
-                for a in num:
+                for a in str(num):
                     list.append(int(a))
                     ls = [
                             ['###','  #','###','###','# #','###','###','###','###','###'],
@@ -25,4 +25,4 @@ def ledDisplay(prompt):
             print('The input must be a non negative integer.\nPlease try again!')
             ledDisplay(prompt)
 
-    ledDisplay('Enter a non negative number')
+ledDisplay('Enter a non negative number: ')
