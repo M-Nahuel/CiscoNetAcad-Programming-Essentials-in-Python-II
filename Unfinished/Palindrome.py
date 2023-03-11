@@ -5,17 +5,24 @@ def palindrome(prompt):
         print('You\'ve entered an empty string.')
         palindome(prompt)
 
-    text = text.upper()
+    text = text.split()
+    text2 = ''
+    for word in text:
+        text2 += word
+    text2 = text2.lower()
     
-    text2 = text[len(text)//2:]
+    if len(text2) % 2 == 1:
+        end = (len(text2)//2)+1
+    else:
+        end = len(text2)//2
 
-    for i in range((len(text)//2)+1, 0, -1):
-        print(text[i+1])
-        if text[i+1] != text2[i-1]:
+    status = 'Es un palindromo'
+    for index in range(len(text2), end, -1):
+        if text2[index-1] != text2[len(text2)-index]:
             status = 'No es un palindromo'
-            break
-        else:
-            status = 'Es un palindromo'
-    print(status)
+            return status
+    
+    return status
 
-palindrome('Ingrese un texto: ')
+
+print(palindrome('Ingrese un texto: '))
