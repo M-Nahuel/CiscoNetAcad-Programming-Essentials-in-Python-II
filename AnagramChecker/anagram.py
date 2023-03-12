@@ -1,6 +1,6 @@
 def inp(prompt):
     str = input(prompt)
-    if str = '':
+    if str == '':
         print('You have\'nt entered any word, try again!')
         inp(prompt)
     return str
@@ -13,9 +13,12 @@ def loop(ls):
     for value in ls:
         str += value
     return str
-    
+
 def checker(value1, value2):
-    
+    if sorted(value1) == sorted(value2):
+        return 'Son Anagramas'
+    else:
+        return 'No son Anagramas'
 
 def anagram():
     firstW = inp('Enter the first word: ').lower()
@@ -27,7 +30,9 @@ def anagram():
     firstW = loop(list1)
     secondW = loop(list2)
     
-    if len(firstW != secondW):
+    if len(firstW) != len(secondW):
         return 'No son Anagramas'
     
-    checker(firstW, secondW)
+    return checker(firstW, secondW)
+    
+print(anagram())
